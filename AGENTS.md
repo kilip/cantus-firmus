@@ -25,6 +25,7 @@ Dashboard.md                     summary of the nearest schedule (plain text)
 04-Lagu/<Sumber>/<id>.md         sources: Puji Syukur, Mazmur, BPI, TPE, Gregorian, Sumber Lain, Profan
 04-Lagu/<Sumber>/files/<id>.png  sheet music
 99-System/Templates/             templates for new files
+99-System/Kontrak-Scraper.md     field contract for the song scraper
 ```
 
 Terms: *Anggota* = members, *Pelayanan* = a service the choir sings at, *Latihan* = a rehearsal, *Lagu* = songs, *Partitur* = sheet music.
@@ -39,7 +40,7 @@ Terms: *Anggota* = members, *Pelayanan* = a service the choir sings at, *Latihan
 
 ## Creating new files
 
-Always copy from `99-System/Templates/` and fill in the fields. Do not change the order or names of fields. The example values and `#` comments in a template are only hints: replace the values and delete the comments. The field list and allowed values are in `99-System/Templates/README.md`.
+Always copy from `99-System/Templates/` and fill in the fields. Do not change the order or names of fields. The example values and `#` comments in a template are only hints: replace the values and delete the comments. The field list and allowed values are in `99-System/Kontrak-Scraper.md`.
 
 ## Rules per file type
 

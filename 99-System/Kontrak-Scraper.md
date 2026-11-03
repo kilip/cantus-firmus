@@ -1,6 +1,8 @@
-# Template dan kontrak field
+# Kontrak Scraper dan Daftar Template
 
-Semua file baru di vault disalin dari template di folder ini. Nilai dan komentar `#` di template hanyalah contoh dan petunjuk; hapus komentar dan ganti nilainya saat membuat file asli.
+Dokumen ini menjelaskan field yang boleh ditulis scraper di file lagu, serta daftar template di `99-System/Templates/`.
+
+Semua file baru di vault disalin dari template di folder `Templates/`. Nilai dan komentar `#` di template hanyalah contoh dan petunjuk; hapus komentar dan ganti nilainya saat membuat file asli.
 
 | Template | Dipakai untuk | Lokasi file hasil |
 |---|---|---|

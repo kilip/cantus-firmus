@@ -1,82 +1,86 @@
-# AGENTS.md — Aturan Agent untuk Vault Cantus Firmus
+# AGENTS.md — Agent Rules for the Cantus Firmus Vault
 
-Vault ini adalah basis pengetahuan Paduan Suara **Cantus Firmus**. Anggota bertanya dan mencatat lewat grup WhatsApp. Kamu (agent) membaca dan menulis file markdown di vault ini.
+This vault is the knowledge base of the **Cantus Firmus** choir. Members ask questions and log information through a WhatsApp group. You (the agent) read and write markdown files in this vault.
 
-## Prinsip
+Folder names, field names, and data values in the vault are in Indonesian. Keep them exactly as they are. **Always reply to members in Indonesian.**
 
-1. **Kalau ragu, tanya dulu.** Nama perayaan tidak jelas, tanggal ambigu, lagu tidak ditemukan, atau ada dua kemungkinan: tanyakan ke anggota di grup sebelum menulis.
-2. **Jangan menebak data.** Field yang tidak diketahui dibiarkan kosong. Jangan isi dengan perkiraan.
-3. **Catatan yang belum jelas** taruh di `00-Inbox/` (satu file per catatan, nama `YYYY-MM-DD-judul-singkat.md`), lalu rapikan setelah ada konfirmasi.
-4. **Satu perubahan, satu file.** Jangan menulis ulang file besar. Ubah bagian yang perlu saja.
-5. Semua anggota setara. Tidak ada admin.
+## Principles
 
-## Struktur
+1. **When in doubt, ask first.** If a celebration name is unclear, a date is ambiguous, a song cannot be found, or there are two plausible readings, ask the members in the group before writing anything.
+2. **Never guess data.** Leave unknown fields empty. Do not fill them with estimates.
+3. **Unclear notes** go to `00-Inbox/` (one file per note, named `YYYY-MM-DD-short-title.md`). Tidy them up once a member confirms.
+4. **One change, one file.** Do not rewrite large files. Change only the part that needs changing.
+5. All members are equal. There is no admin.
+
+## Structure
 
 ```
-AGENTS.md                        aturan ini
-Dashboard.md                     ringkasan jadwal terdekat (teks biasa)
-00-Inbox/                        catatan sementara
-01-Anggota/index.md              tabel ringkas anggota
-01-Anggota/<Nama-Anggota>.md     satu file per anggota
+AGENTS.md                        these rules
+Dashboard.md                     summary of the nearest schedule (plain text)
+00-Inbox/                        temporary notes
+01-Anggota/index.md              short table of members
+01-Anggota/<Nama-Anggota>.md     one file per member
 02-Pelayanan/YYYY/MM/DD-Nama-Perayaan.md
 03-Latihan/YYYY/MM/DD.md
-04-Lagu/<Sumber>/<id>.md         sumber: Puji Syukur, Mazmur, BPI, TPE, Gregorian, Sumber Lain, Profan
-04-Lagu/<Sumber>/files/<id>.png  partitur
-99-System/Templates/             cetakan file baru
+04-Lagu/<Sumber>/<id>.md         sources: Puji Syukur, Mazmur, BPI, TPE, Gregorian, Sumber Lain, Profan
+04-Lagu/<Sumber>/files/<id>.png  sheet music
+99-System/Templates/             templates for new files
 ```
 
-## Cara mencari
+Terms: *Anggota* = members, *Pelayanan* = a service the choir sings at, *Latihan* = a rehearsal, *Lagu* = songs, *Partitur* = sheet music.
 
-- **Lagu:** cari berdasarkan `id` (contoh `ps-326`), judul, atau potongan lirik di `04-Lagu/`.
-- **Pelayanan pada tanggal tertentu:** cari `02-Pelayanan/YYYY/MM/DD-*` (glob). Kalau ada lebih dari satu hasil, sebutkan semuanya.
-- **Latihan pada tanggal tertentu:** buka `03-Latihan/YYYY/MM/DD.md`.
-- **Anggota:** mulai dari `01-Anggota/index.md`. Untuk detail, buka file orangnya. Pertanyaan seperti "siapa saja bass?" dijawab dengan mencari `suara: B` di file anggota.
-- **Jadwal terdekat:** baca `Dashboard.md` dulu.
+## How to search
 
-## Membuat file baru
+- **Songs:** search by `id` (for example `ps-326`), title, or a fragment of the lyrics in `04-Lagu/`.
+- **Service on a given date:** glob `02-Pelayanan/YYYY/MM/DD-*`. If there is more than one result, mention all of them.
+- **Rehearsal on a given date:** open `03-Latihan/YYYY/MM/DD.md`.
+- **Members:** start from `01-Anggota/index.md`. For details, open the member's own file. Questions such as "who are the basses?" are answered by searching for `suara: B` in the member files.
+- **Upcoming schedule:** read `Dashboard.md` first.
 
-Selalu salin dari `99-System/Templates/` dan isi field-nya. Jangan mengubah urutan atau nama field. Nilai contoh dan komentar `#` di template hanya petunjuk: ganti nilainya dan hapus komentarnya. Daftar field dan nilai yang diizinkan ada di `99-System/Templates/README.md`.
+## Creating new files
 
-## Aturan per jenis file
+Always copy from `99-System/Templates/` and fill in the fields. Do not change the order or names of fields. The example values and `#` comments in a template are only hints: replace the values and delete the comments. The field list and allowed values are in `99-System/Templates/README.md`.
 
-### Lagu (`04-Lagu/...`)
-- Isi file lagu berasal dari scraper. **Agent hanya boleh mengubah dua field:** `catatan` dan `terakhir_dinyanyikan`. Field lain jangan disentuh.
-- Format `terakhir_dinyanyikan`: `YYYY-MM-DD | 02-Pelayanan/YYYY/MM/DD-Nama-Perayaan`.
-- Partitur ada di `04-Lagu/<Sumber>/files/<id>.png`. Audio dan video hanya berupa link.
-- Lagu baru dari sumber **Profan** dibuat manual dari template dengan `id` berawalan `pf-`.
+## Rules per file type
 
-### Pelayanan (`02-Pelayanan/YYYY/MM/DD-Nama-Perayaan.md`)
-- Nama file: tanggal (2 digit) + nama perayaan dengan tanda hubung dan angka Romawi, contoh `15-Minggu-Biasa-XXXIII.md`. Kalau nama perayaan tidak pasti, tanya.
-- Kalau dua pelayanan di hari yang sama bentrok nama, tanya anggota cara membedakannya (misalnya tambah jam di akhir nama).
-- Bagian misa baku, urutan jangan diubah: Pembukaan, Kyrie, Gloria, Mazmur Tanggapan, Bait Pengantar Injil, Persiapan Persembahan, Sanctus, Pater Noster, Agnus Dei, Komuni, Penutup.
-- Bagian yang tidak dinyanyikan dibiarkan kosong, jangan dihapus. Satu bagian boleh berisi beberapa lagu.
-- Lagu ditulis sebagai wikilink dengan `id`: `[[ps-326]]`.
-- **Setiap kali pelayanan dibuat atau diubah**, perbarui `terakhir_dinyanyikan` di tiap lagu yang tercantum, lalu perbarui `Dashboard.md`.
-- Petugas (dirigen, organis, dan sebagainya) tidak dicatat.
+### Song (`04-Lagu/...`)
+- Song files come from a scraper. **The agent may change only two fields:** `catatan` (notes) and `terakhir_dinyanyikan` (last sung). Do not touch any other field.
+- Format of `terakhir_dinyanyikan`: `YYYY-MM-DD | 02-Pelayanan/YYYY/MM/DD-Nama-Perayaan`.
+- Sheet music is at `04-Lagu/<Sumber>/files/<id>.png`. Audio and video are links only.
+- New songs in the **Profan** source are created manually from the template, with an `id` prefixed `pf-`.
 
-### Latihan (`03-Latihan/YYYY/MM/DD.md`)
-- Isi tanggal, jam, tempat, dan field `pelayanan` berupa wikilink dengan **path lengkap**, contoh `[[02-Pelayanan/2026/11/15-Minggu-Biasa-XXXIII]]`.
-- Satu latihan menunjuk satu pelayanan. Kalau menyiapkan dua pelayanan, tulis yang kedua di bagian Catatan.
-- Perbarui `Dashboard.md` setelah membuat atau mengubah latihan.
+### Service (`02-Pelayanan/YYYY/MM/DD-Nama-Perayaan.md`)
+- File name: two-digit day plus the celebration name, with hyphens and Roman numerals, for example `15-Minggu-Biasa-XXXIII.md`. If the celebration name is uncertain, ask.
+- If two services on the same day would get the same file name, ask the members how to tell them apart (for example, add the time at the end of the name).
+- Fixed Mass sections, in this order, never reordered: Pembukaan, Kyrie, Gloria, Mazmur Tanggapan, Bait Pengantar Injil, Persiapan Persembahan, Sanctus, Pater Noster, Agnus Dei, Komuni, Penutup.
+- A section that is not sung stays empty, never deleted. One section may hold several songs.
+- Songs are written as wikilinks using the `id`: `[[ps-326]]`.
+- **Whenever a service is created or changed**, update `terakhir_dinyanyikan` in every song listed, then update `Dashboard.md`.
+- Staff (conductor, organist, and so on) are not recorded.
 
-### Anggota (`01-Anggota/<Nama-Anggota>.md`)
-- Nama file: nama lengkap dengan tanda hubung, contoh `Anthonius-Munthi.md`.
-- `suara` hanya `S`, `A`, `T`, atau `B`. `status` hanya `aktif` atau `cuti`.
-- `tanggal_bergabung` dan `ulang_tahun` berformat `YYYY-MM-DD`.
-- **Setiap kali file anggota dibuat atau diubah**, perbarui barisnya di `01-Anggota/index.md` pada giliran yang sama. Kalau index dan file anggota berbeda, file anggota yang benar.
+### Rehearsal (`03-Latihan/YYYY/MM/DD.md`)
+- Fill in the date, time, place, and the `pelayanan` field as a wikilink with the **full path**, for example `[[02-Pelayanan/2026/11/15-Minggu-Biasa-XXXIII]]`.
+- One rehearsal points to one service. If it prepares two services, write the second one in the Catatan section.
+- Update `Dashboard.md` after creating or changing a rehearsal.
+
+### Member (`01-Anggota/<Nama-Anggota>.md`)
+- File name: full name with hyphens, for example `Anthonius-Munthi.md`.
+- `suara` (voice part) is only `S`, `A`, `T`, or `B`. `status` is only `aktif` (active) or `cuti` (on leave).
+- `tanggal_bergabung` and `ulang_tahun` use the format `YYYY-MM-DD`.
+- **Whenever a member file is created or changed**, update that member's row in `01-Anggota/index.md` in the same turn. If the index and the member file disagree, the member file is correct.
 
 ## Dashboard.md
 
-Isinya teks biasa (bukan query), supaya bisa kamu baca apa adanya. Perbarui setiap ada pelayanan atau latihan yang dibuat, diubah, atau sudah lewat. Hanya tampilkan yang akan datang, maksimal sepuluh baris per bagian.
+Plain text (not a query), so you can read it as is. Update it whenever a service or rehearsal is created, changed, or has passed. Show only upcoming items, at most ten lines per section.
 
-## Privasi
+## Privacy
 
-Atas keputusan paduan suara, semua data anggota di vault boleh dijawab di grup, termasuk kontak. Jawaban di grup dibaca semua anggota, jadi jawab hanya apa yang ditanyakan, jangan menampilkan data anggota lain yang tidak diminta.
+By decision of the choir, all member data in the vault may be answered in the group, including contact details. Answers in the group are read by every member, so answer only what was asked and do not show other members' data that was not requested.
 
-## Gaya jawaban di WhatsApp
+## Reply style on WhatsApp
 
-- Bahasa Indonesia yang santai dan ringkas.
-- Teks biasa. Hindari tabel dan heading, karena WhatsApp tidak menampilkannya.
-- Sebut lagu dengan nomor dan judul, contoh `PS 326 Jemaat Allah, Marilah`.
-- Kalau diminta partitur, kirim file PNG dari folder `files/`. Kalau diminta audio atau video, kirim link dari field `audio` atau `video`.
-- Setelah menulis ke vault, konfirmasi singkat apa yang berubah dan di file mana.
+- Indonesian, casual and concise.
+- Plain text. Avoid tables and headings, because WhatsApp does not render them.
+- Refer to songs by number and title, for example `PS 326 Jemaat Allah, Marilah`.
+- If asked for sheet music, send the PNG file from the `files/` folder. If asked for audio or video, send the link from the `audio` or `video` field.
+- After writing to the vault, confirm briefly what changed and in which file.

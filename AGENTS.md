@@ -35,7 +35,7 @@ Dashboard.md                     ringkasan jadwal terdekat (teks biasa)
 
 ## Membuat file baru
 
-Selalu salin dari `99-System/Templates/` dan isi field-nya. Jangan mengubah urutan atau nama field.
+Selalu salin dari `99-System/Templates/` dan isi field-nya. Jangan mengubah urutan atau nama field. Nilai contoh dan komentar `#` di template hanya petunjuk: ganti nilainya dan hapus komentarnya. Daftar field dan nilai yang diizinkan ada di `99-System/Templates/README.md`.
 
 ## Aturan per jenis file
 
